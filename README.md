@@ -27,6 +27,7 @@ Requirements:
 Python 3.6
 
 A USB drive with the images to be classified.
+
 Raspberry Pi
 
 Output
