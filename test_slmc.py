@@ -1,3 +1,4 @@
+'''
 def test_extract():
     """
     :Author: Tim Hoer
@@ -42,21 +43,27 @@ def test_write():
     :Notes: Tests that write function writes image
     classifications to text file in specified directory.
     """
-    #import function
+    import shutil
+    import tempfile
+    from os import path
+    from classification_output import write_to_file
     # create temporary directory
-    test_dir = tempfile.mkdtemp()
+    temp_dir = tempfile.mkdtemp()
     # call function
-    write(temp_dir, array_of_image_objects)
+    write_to_file(path.join(temp_dir, 'test.txt'), 'high risk', 'patient10.jpg', '6/9/69')
     # check file
-    f = open(path.join(test_dir, 'test.txt'))
-    assert(f.read() is 'The owls are not what they seem')
+    f = open(path.join(temp_dir, 'test.txt'))
+    assert(f.read() == 'image: patient10.jpg, classification: high risk, date:'
+                       ' 6/9/69\n')
+    #close file
+    f.close()
     # remove temporary directory
-    shutil.rmtree(test_dir)
+    shutil.rmtree(temp_dir)
 
     #assert(os.path.isfile('ecg_data1_out.txt'))
     #os.remove('ecg_data1_out.txt')
 
-
+'''
 
 def test_mongo():
     """
