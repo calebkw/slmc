@@ -6,6 +6,10 @@ import re
 
 
 def extract(dir):
+    """ Extracts .jpg, .gif, png images from input directory, returns list of
+    image objects
+    :param: dir: directory in which image files are located
+    """
     lesions = []
     dir = dir + "/*"
     for fname in glob.glob(dir):
