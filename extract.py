@@ -7,14 +7,18 @@ import re
 
 def extract(dir):
     lesions = []
+    dir = dir + "/*"
     for fname in glob.glob(dir):
-        if re.search('/([^/]+\.(?:jpg|gif|png))', fname, re.IGNORECASE):
-            print(fname)
+        #print(fname)
+        out = re.search('([^/]+\.(?:jpg|gif|png))', fname,
+                        re.IGNORECASE)
+        if out:
+            print()
             with open(fname, "rb") as image_file:
                 encoded_string = base64.b64encode(image_file.read())
                 lesions.append(encoded_string)
             '''
-            new_lesion = lesion(encoded_string)
+            new_lesion = lesion(data = encoded_string, name = out.group(0))
             lesions.append(new_lesion)
             '''
     return lesions
