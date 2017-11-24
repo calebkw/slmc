@@ -5,15 +5,12 @@ def test_extract():
     :Notes: Tests that function loads all images from input directory and
     stores them as instances of the lesion class.
     """
-    # import packages
     import os
     import urllib.request
     import shutil
     import tempfile
-    from os import path
     from extract import extract
     from Image import Image
-    # import function, lesion class
     # create temporary directory
     test_dir = tempfile.mkdtemp()
     #test extract on empty directory
