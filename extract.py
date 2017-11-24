@@ -8,13 +8,11 @@ import re
 def extract(dir):
     lesions = []
     for fname in glob.glob(dir):
-        print(fname)
-        print(re.search('(?i)\.(jpg|png|gif)$/i', fname))
-        if re.search('(?i)\.(jpg|png|gif)$/i', fname):
+        if re.search('/([^/]+\.(?:jpg|gif|png))', fname, re.IGNORECASE):
             print(fname)
             with open(fname, "rb") as image_file:
                 encoded_string = base64.b64encode(image_file.read())
-
+                lesions.append(encoded_string)
             '''
             new_lesion = lesion(encoded_string)
             lesions.append(new_lesion)
@@ -23,4 +21,4 @@ def extract(dir):
 
 
 if __name__ == '__main__':
-    extract('C:/Users/Tim/OneDrive/Pictures/Screenshots/*')
+    print(len(extract('C:/Users/Tim/Desktop/BMW USB/Europe 2016/*')))
