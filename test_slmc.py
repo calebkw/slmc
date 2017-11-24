@@ -1,4 +1,3 @@
-'''
 def test_extract():
     """
     :Author: Tim Hoer
@@ -13,6 +12,7 @@ def test_extract():
     import tempfile
     from os import path
     from extract import extract
+    from Image import Image
     # import function, lesion class
     # create temporary directory
     test_dir = tempfile.mkdtemp()
@@ -30,12 +30,12 @@ def test_extract():
     # call function
     out = extract(test_dir)
     # check that output array is instance of lesion class
-    #assert(isinstance(out[0], lesion) is True)
     assert (len(out) == 2)
+    assert(isinstance(out[0], Image) is True)
     # remove temporary directory
     shutil.rmtree(test_dir)
 
-'''
+
 def test_write():
     """
     :Author: Tim Hoer
