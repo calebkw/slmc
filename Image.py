@@ -12,7 +12,7 @@ class Image:
         self.image = im_data
         self.name = filename
 
-
+'''
     def display(self):
 
         # display image?
@@ -22,6 +22,6 @@ class Image:
         numcols = len(self.image[0])
 
         return [numrows, numcols]
-
+'''
 
 
