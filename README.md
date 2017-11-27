@@ -9,7 +9,7 @@ LICENSE.md ( MIT License)
 
 The Travis Badge is:
 =========
-[Build Status](https://travis-ci.org/calebkw/slmc.svg?branch=master)](https://travis-ci.org/calebkw/slmc)
+[Build Status]https://travis-ci.org/calebkw/slmc.svg?branch=master
 
 Read the Docs Badge:
 =========
