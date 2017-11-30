@@ -15,10 +15,12 @@ def extract(dir):
     dir = dir + "/*"
     for fname in glob.glob(dir):
         out = re.search('([^/]+\.(?:jpg|gif|png))', fname,
-                        re.IGNORECASE)
+                       re.IGNORECASE)
         if out:
             with open(fname, "rb") as image_file:
+                #print(type(image_file))
                 encoded_string = base64.b64encode(image_file.read())
+            #print(len(encoded_string))
             new_lesion = Image(im_data=encoded_string, filename=
                                out.group(0))
             lesions.append(new_lesion)
@@ -26,4 +28,4 @@ def extract(dir):
 
 
 if __name__ == '__main__':
-    print(len(extract('C:/Users/Tim/Desktop/BMW USB/Europe 2016/*')))
+    extract('C:/Users/Tim/Desktop/BMW USB/Europe 2016')
