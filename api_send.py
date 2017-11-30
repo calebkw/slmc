@@ -1,6 +1,7 @@
 import requests
 import json
 
+
 def classify(images_in):
     """
 
@@ -16,7 +17,6 @@ def classify(images_in):
         this_dict = {'name': img.name, 'data': img.data}
         jsn_dict['images'].append(this_dict)
 
-    # TODO: change to actual vm address
     endpoint = 'http://vcm-1612.vm.duke.edu:5000/api/classify'
 
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
