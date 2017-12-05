@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0,'/')
 from flask import Flask, request, jsonify
-from   import get_predictions
+#from   import get_predictions
 import numpy as np
 app= Flask(__name__)
 
@@ -30,15 +30,15 @@ def request_classify():
     global calls
     calls +=1
     try:
-        input =request.json['placeholder']
+        input = request.json['placeholder']
     except:
-        output = "Input data is not formatted right"
+        output = "Input data is not formatted correctly."
         return jsonify(output), 400
     try:
         label, result = get_predictions(input)
 
     except:
-        output = "internal Error"
+        output = "Internal Error"
         return jsonify(output), 500
 
 
