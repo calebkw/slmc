@@ -1,7 +1,7 @@
 import sys
 sys.path.insert(0,'/')
 from flask import Flask, request, jsonify
-#from   import get_predictions
+import get_prediction
 import numpy as np
 app= Flask(__name__)
 
@@ -28,14 +28,19 @@ def request_classify():
     """
 
     global calls
-    calls +=1
+    calls += 1
+    label = []
     try:
-        input = request.json['placeholder']
+        input = request.json['images']
     except:
         output = "Input data is not formatted correctly."
         return jsonify(output), 400
     try:
-        label, result = get_predictions(input)
+        output = {'classified':[]}
+        for image in input:
+            prediction = get_prediction(image['data'])
+            current_im_dict = {'name': image['name'], 'predicition': prediction}
+            output['classified'].append(current_im_dict)
 
     except:
         output = "Internal Error"
