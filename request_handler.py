@@ -29,13 +29,18 @@ def request_classify():
 
     global calls
     calls +=1
+    label =[]
     try:
-        input =request.json['placeholder']
+        input = request.json['images']
     except:
         output = "Input data is not formatted right"
         return jsonify(output), 400
     try:
-        label, result = get_predictions(input)
+        output = {'classified':[]}
+        for image in input:
+            prediction = get_predictions(image['data'])
+            current_im_dict = {'name': image['name'], 'predicition': prediction}
+            output['classified'].append(current_im_dict)
 
     except:
         output = "internal Error"
