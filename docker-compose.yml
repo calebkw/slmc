@@ -3,7 +3,7 @@ services:
   server:
     build: .
     volumes:
-      - $PWD:/notebooks
+      - .:/notebooks
     ports:
       - 8000:8000
     command: ["flask", "run", "--port=8000", "--host=0.0.0.0"]

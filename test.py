@@ -4,4 +4,4 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET'])
 def funcy():
-    return 'hello'
+    return 'hello hi hello'
