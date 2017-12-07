@@ -47,3 +47,6 @@ def hasdrive(letter):
     return "Windows" in platform.system() and os.system(
         "vol %s: 2>nul>nul" % (letter)) == 0
 
+
+if __name__ == '__main__':
+    start_classifier()
