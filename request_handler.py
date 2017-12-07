@@ -53,7 +53,7 @@ def request_classify():
         return jsonify(output), 500
 
 
-@app.route("/testing")
+@app.route("/testing", methods=['POST'])
 def test_return():
     global calls
     calls += 1
