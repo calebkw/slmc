@@ -1,13 +1,11 @@
-import request
-import json
-
-
 def classify(images_in):
     """
 
     :param images_in: list of Image objects
     :return:
     """
+    import requests
+    import json
 
     # setup dict with empty list of image objects
     jsn_dict = {'images': []}
@@ -20,7 +18,7 @@ def classify(images_in):
     endpoint = 'http://vcm-1612.vm.duke.edu:5000/api/classify'
 
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    r = request.post(endpoint, data=json.dumps(jsn_dict), headers=headers)
+    r = requests.post(endpoint, data=json.dumps(jsn_dict), headers=headers)
 
     # TODO: parse return json and save classification to each object
     return r.json()
@@ -29,8 +27,10 @@ def classify(images_in):
 def num_requests():
     """Get total number of requests to server"""
 
+    import requests
+    
     endpoint = 'http://vcm-1612.vm.duke.edu:5000/api/num_requests'
-    r = request.get(endpoint)
+    r = requests.get(endpoint)
 
     return r.json()
 
