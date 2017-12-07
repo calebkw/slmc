@@ -1,6 +1,9 @@
 import sys
 sys.path.insert(0,'/')
 from flask import Flask, request, jsonify
+import io
+from PIL import Image as im
+import base64
 import get_prediction
 import numpy as np
 app= Flask(__name__)
@@ -39,8 +42,10 @@ def request_classify():
     try:
         output = {'classified':[]}
         for image in input:
-            prediction = get_prediction(image['data'])
-            current_im_dict = {'name': image['name'], 'predicition': prediction}
+            im_data = base64.b64decode(image['data'])
+            im_data = np.array(im.open(io.BytesIO(im_data)))
+            prediction = get_prediction(im_data)
+            current_im_dict = {'name': image['name'], 'prediction': prediction}
             output['classified'].append(current_im_dict)
 
     except:
