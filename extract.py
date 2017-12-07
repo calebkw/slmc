@@ -19,7 +19,7 @@ def extract(dir):
         if out:
             with open(fname, "rb") as image_file:
                 #print(type(image_file))
-                encoded_string = base64.b64encode(image_file.read())
+                encoded_string = str(base64.b64encode(image_file.read()))
             #print(len(encoded_string))
             new_lesion = Image(im_data=encoded_string, filename=
                                out.group(0))
