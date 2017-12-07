@@ -1,0 +1,14 @@
+name: slmc
+channels:
+        - cbetters
+dependencies:
+        - python=3.5
+        - numpy
+        - csvkit
+        - ipython
+        - pytest
+        - pytest-cov
+        - pytest-pep8
+        - scipy
+        - peakutils
+        - flask
