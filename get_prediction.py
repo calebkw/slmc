@@ -90,7 +90,7 @@ def get_prediction(image_matrix):
 
   return (labels, results)
 
-f = Image.open('D:\MDSD\Final Project\data\ISIC-images\ISIC_MSK-1_2\ISIC_0014657')
-img = np.array(f)
-label =get_prediction(img)
-print(label)
+# f = Image.open('D:\MDSD\Final Project\data\ISIC-images\ISIC_MSK-1_2\ISIC_0014657')
+# img = np.array(f)
+# label =get_prediction(img)
+# print(label)

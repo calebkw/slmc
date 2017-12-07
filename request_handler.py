@@ -5,6 +5,7 @@ import get_prediction
 import numpy as np
 app= Flask(__name__)
 
+calls = 0
 
 @app.route("/requests", methods=['GET'])
 def request_total():
@@ -15,7 +16,7 @@ def request_total():
     """
 
     global calls
-    calls +=1
+    calls += 1
     output = {"requests": calls}
     return jsonify(output)
 
@@ -46,4 +47,13 @@ def request_classify():
         output = "Internal Error"
         return jsonify(output), 500
 
+
+@app.route("/testing")
+def test_return():
+    global calls
+    calls += 1
+
+    input = request.json
+
+    return jsonify(input)
 
