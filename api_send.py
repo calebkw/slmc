@@ -1,13 +1,11 @@
-import requests
-import json
-
-
 def classify(images_in):
     """
 
     :param images_in: list of Image objects
     :return:
     """
+    import requests
+    import json
 
     # setup dict with empty list of image objects
     jsn_dict = {'images': []}
@@ -29,6 +27,8 @@ def classify(images_in):
 def num_requests():
     """Get total number of requests to server"""
 
+    import requests
+    
     endpoint = 'http://vcm-1612.vm.duke.edu:5000/api/num_requests'
     r = requests.get(endpoint)
 
