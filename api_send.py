@@ -13,7 +13,6 @@ def classify(images_in):
     for img in images_in:
 
         this_dict = {'name': img.name, 'data': img.image}
-        print(type(img.image))
         jsn_dict['images'].append(this_dict)
 
     endpoint = 'http://vcm-1840.vm.duke.edu:5000/api/classify'
