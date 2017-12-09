@@ -9,12 +9,14 @@ Welcome to Melanoma Classifier's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   classify
-   num_requests
-   write_to_file
+
+
+   Image
+   api_send
+   classification_output
    extract
-   hasdrive
-   start_classifier
+   main
+   test_slmc
 
 Indices and tables
 ==================
