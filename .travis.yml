@@ -13,4 +13,4 @@ install:
         - source activate R_Pi
 
 script:
-        - test_slmc.py
+        - py.test
