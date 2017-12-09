@@ -9,4 +9,3 @@ dependencies:
         - pytest-pep8
         - scipy
         - flask
-        - os
