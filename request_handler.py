@@ -1,6 +1,7 @@
 import sys
 from flask import Flask, request, jsonify
 import io
+import base64
 import numpy as np
 from PIL import Image as Im
 from get_prediction import get_prediction
