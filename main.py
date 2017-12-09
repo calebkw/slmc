@@ -8,7 +8,7 @@ from datetime import datetime
 
 def start_classifier():
     """ Waits for image drive to be inserted, extracts files, submits API
-    request, and writes results to file.
+    request, and writes results to classification.out.
     """
 
     while True:
@@ -37,8 +37,9 @@ def start_classifier():
                         if prob > 0.50:
                             outcome = dict['prediction'][0][1]
                         else:
+                            prob = dict['prediction'][1][0]
                             outcome = dict['prediction'][0][0]
-                        write_to_file('classification.out', outcome,
+                        write_to_file('classification.out', outcome, prob,
                                       dict['name'], datetime.now().strftime(
                                        '%Y-%m-%d %H:%M:%S'))
                     print('Classifications sucessfully appended to '

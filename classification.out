@@ -5,3 +5,5 @@ image: DSC_0102.JPG, classification: non malignant, date: 2017-12-09 13:04:49
 image: DSC_0158.JPG, classification: non malignant, date: 2017-12-09 13:04:49
 image: DSC_0102.JPG, classification: non malignant, date: 2017-12-09 13:07:28
 image: DSC_0158.JPG, classification: non malignant, date: 2017-12-09 13:07:28
+image: DSC_0102.JPG, classification: non malignant, certainty: 0.8508810997009277, date: 2017-12-09 14:59:47
+image: DSC_0158.JPG, classification: non malignant, certainty: 0.9685705304145813, date: 2017-12-09 14:59:47

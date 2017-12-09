@@ -47,10 +47,12 @@ def test_write():
     # create temporary directory
     temp_dir = tempfile.mkdtemp()
     # call function
-    write_to_file(path.join(temp_dir, 'test.txt'), 'high risk', 'patient10.jpg', '6/9/69')
+    write_to_file(path.join(temp_dir, 'test.txt'), 'high risk', '.50',\
+    'patient10.jpg', '6/9/69')
     # check file
     f = open(path.join(temp_dir, 'test.txt'))
-    assert(f.read() == 'image: patient10.jpg, classification: high risk, date:'
+    assert(f.read() == 'image: patient10.jpg, classification: high risk, '
+                       'certainty: .50, date:'
                        ' 6/9/69\n')
     #close file
     f.close()

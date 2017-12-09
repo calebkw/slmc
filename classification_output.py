@@ -1,4 +1,6 @@
-def write_to_file(output_filename, classified_output, image_filename, date):
+def write_to_file(output_filename, classified_output, certainty,
+                  image_filename,
+                  date):
     """ Writes the output to a seperate file
     :param output_filename: str,name for output
     :param classified_output: The classification of the output file
@@ -13,6 +15,9 @@ def write_to_file(output_filename, classified_output, image_filename, date):
     file.write(', ')
     file.write('classification: ')
     file.write(str(classified_output))
+    file.write(', ')
+    file.write('certainty: ')
+    file.write(str(certainty))
     file.write(', ')
     file.write('date: ')
     file.write(str(date))
