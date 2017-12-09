@@ -10,5 +10,4 @@ dependencies:
         - scipy
         - base64
         - flask
-        - platform
         - os
