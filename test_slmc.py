@@ -60,19 +60,6 @@ def test_write():
     #assert(os.path.isfile('ecg_data1_out.txt'))
     #os.remove('ecg_data1_out.txt')
 
-'''
-
-def test_mongo():
-    """
-    :Author: Tim Hoer
-    :Date: November 20, 2017
-    :Notes: Tests creation and access of MongoDB model instance.
-    """
-    #import MongoModel script
-    #create instance
-    #access instance
-
-'''
 
 
 

@@ -4,7 +4,6 @@ from extract import extract
 import api_send
 from classification_output import write_to_file
 from datetime import datetime
-import json
 
 
 def start_classifier():
@@ -12,41 +11,44 @@ def start_classifier():
     request, and writes results to file.
     """
 
-    drive = input("Enter USB drive location: ").strip()
     while True:
-        if hasdrive(drive):
-            print('DRIVE INSERTED')
+        drive = input("Enter USB drive location or \'quit\' to exit: ").strip()
+        if drive == 'quit':
+            break
+        elif hasdrive(drive):
             # extract images from drive
             try:
                 image_array = extract(drive + ':')
-                print('IMAGES EXTRACTED: ')
-                print(len(image_array))
+                print('Extracted images: ' + str(len(image_array)))
             except SystemError:
                 print('Image extraction failed. Closing program.')
                 return
             # issue API request
-            try:
-                classified_array = api_send.classify(image_array)
-                #classified_array = api_send.num_requests()
-            except SystemError:
-                print('Image classification failed. Closing program.')
-                return
-            # write output to file
-            try:
-                for dict in classified_array['classified']:
-                    prob = dict['prediction'][1][1]
-                    if prob > 0.50:
-                        outcome = dict['prediction'][0][1]
-                    else:
-                        outcome = dict['prediction'][0][0]
-                    write_to_file('classification.out', outcome,
-                                  dict['name'], datetime.now().strftime(
-                                   '%Y-%m-%d %H:%M:%S'))
-            except SystemError:
-                print('Writing classifications to file failed. Closing '
-                      'program.')
-                return
-
+            if len(image_array) > 0:
+                try:
+                    classified_array = api_send.classify(image_array)
+                except SystemError:
+                    print('Image classification failed. Closing program.')
+                    return
+                # write output to file
+                try:
+                    for dict in classified_array['classified']:
+                        prob = dict['prediction'][1][1]
+                        if prob > 0.50:
+                            outcome = dict['prediction'][0][1]
+                        else:
+                            outcome = dict['prediction'][0][0]
+                        write_to_file('classification.out', outcome,
+                                      dict['name'], datetime.now().strftime(
+                                       '%Y-%m-%d %H:%M:%S'))
+                    print('Classifications sucessfully appended to '
+                          '\'classification.out\'.')
+                except SystemError:
+                    print('Writing classifications to file failed. Closing '
+                          'program.')
+                    return
+        else:
+            print("No drive found at specified location.")
 
 def hasdrive(letter):
     return "Windows" in platform.system() and os.system(
