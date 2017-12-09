@@ -47,6 +47,9 @@ def request_classify():
             im_data = base64.b64decode((image['data'].encode('utf-8')[2:-1]))
             # read as image data, save in ndarray
             im_data = np.array(Im.open(io.BytesIO(im_data)))
+            # if >3 channel (e.g. png with transparency) drop it
+            while np.shape(im_data)[2] > 3:
+                im_data = im_data[:, :, :-1]
             raw_prediction = get_prediction(im_data)
             prediction =[raw_prediction[0],  np.ndarray.tolist(raw_prediction[1])]
             current_im_dict = {'name': image['name'], 'prediction': prediction}
