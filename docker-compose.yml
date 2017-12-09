@@ -5,5 +5,5 @@ services:
     volumes:
       - .:/notebooks
     ports:
-      - 8000:8000
-    command: ["flask", "run", "--port=8000", "--host=0.0.0.0"]
+      - 5000:5000
+    command: ["flask", "run", "--port=5000", "--host=0.0.0.0"]
