@@ -6,7 +6,6 @@ dependencies:
         - numpy
         - ipython
         - pytest
-        - Image
         - re
         - pytest-pep8
         - scipy
