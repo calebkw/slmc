@@ -1,0 +1,9 @@
+version: '2'
+services:
+  server:
+    build: .
+    volumes:
+      - .:/notebooks
+    ports:
+      - 5000:5000
+    command: ["flask", "run", "--port=5000", "--host=0.0.0.0"]
