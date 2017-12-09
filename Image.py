@@ -12,16 +12,4 @@ class Image:
         self.image = im_data
         self.name = filename
 
-'''
-    def display(self):
-
-        # display image?
-
-    def size(self):
-        numrows = len(self.image)
-        numcols = len(self.image[0])
-
-        return [numrows, numcols]
-'''
-
 

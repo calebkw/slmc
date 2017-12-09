@@ -1,26 +1,22 @@
-import os
-#import lesion
 import base64
 import glob
 import re
 from Image import Image
 
 
-def extract(dir):
+def extract(directory):
     """ Extracts .jpg, .gif, png images from input directory, returns list of
     image objects
     :param: dir: directory in which image files are located
     """
     lesions = []
-    dir = dir + "/*"
-    for fname in glob.glob(dir):
+    directory = directory + "/*"
+    for fname in glob.glob(directory):
         out = re.search('([^/]+\.(?:jpg|gif|png))', fname,
-                       re.IGNORECASE)
+                        re.IGNORECASE)
         if out:
             with open(fname, "rb") as image_file:
-                #print(type(image_file))
                 encoded_string = str(base64.b64encode(image_file.read()))
-            #print(len(encoded_string))
             new_lesion = Image(im_data=encoded_string, filename=
                                out.group(0))
             lesions.append(new_lesion)

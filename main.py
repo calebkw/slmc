@@ -32,15 +32,15 @@ def start_classifier():
                     return
                 # write output to file
                 try:
-                    for dict in classified_array['classified']:
-                        prob = dict['prediction'][1][1]
+                    for lesion in classified_array['classified']:
+                        prob = lesion['prediction'][1][1]
                         if prob > 0.50:
-                            outcome = dict['prediction'][0][1]
+                            outcome = lesion['prediction'][0][1]
                         else:
-                            prob = dict['prediction'][1][0]
-                            outcome = dict['prediction'][0][0]
+                            prob = lesion['prediction'][1][0]
+                            outcome = lesion['prediction'][0][0]
                         write_to_file('classification.out', outcome, prob,
-                                      dict['name'], datetime.now().strftime(
+                                      lesion['name'], datetime.now().strftime(
                                        '%Y-%m-%d %H:%M:%S'))
                     print('Classifications sucessfully appended to '
                           '\'classification.out\'.')
@@ -51,9 +51,10 @@ def start_classifier():
         else:
             print("No drive found at specified location.")
 
+
 def hasdrive(letter):
     return "Windows" in platform.system() and os.system(
-        "vol %s: 2>nul>nul" % (letter)) == 0
+        "vol %s: 2>nul>nul" % letter) == 0
 
 
 if __name__ == '__main__':

@@ -13,8 +13,6 @@ def test_extract():
     from Image import Image
     # create temporary directory
     test_dir = tempfile.mkdtemp()
-    #test extract on empty directory
-    #assertRaises(Exception,extract,test_dir)
     # upload images to temporary directory
     fullfilename = os.path.join(test_dir, 'puppy.jpg')
     urllib.request.urlretrieve(
@@ -48,21 +46,13 @@ def test_write():
     temp_dir = tempfile.mkdtemp()
     # call function
     write_to_file(path.join(temp_dir, 'test.txt'), 'high risk', '.50',\
-    'patient10.jpg', '6/9/69')
+                  'patient10.jpg', '6/9/69')
     # check file
     f = open(path.join(temp_dir, 'test.txt'))
     assert(f.read() == 'image: patient10.jpg, classification: high risk, '
                        'certainty: .50, date:'
                        ' 6/9/69\n')
-    #close file
+    # close file
     f.close()
     # remove temporary directory
     shutil.rmtree(temp_dir)
-
-    #assert(os.path.isfile('ecg_data1_out.txt'))
-    #os.remove('ecg_data1_out.txt')
-
-
-
-
-
