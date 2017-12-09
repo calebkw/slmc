@@ -19,16 +19,18 @@ def start_classifier():
             # extract images from drive
             try:
                 image_array = extract(drive + ':')
-                print('Extracted images: ' + str(len(image_array)))
+                print('Images extracted: ' + str(len(image_array)))
             except SystemError:
-                print('Image extraction failed. Closing program.')
+                print('Image extraction from drive failed. Closing '
+                      'program.')
                 return
             # issue API request
             if len(image_array) > 0:
                 try:
                     classified_array = api_send.classify(image_array)
-                except SystemError:
-                    print('Image classification failed. Closing program.')
+                except:
+                    print('API request for image classification failed. '
+                          'Closing program.')
                     return
                 # write output to file
                 try:
@@ -44,7 +46,7 @@ def start_classifier():
                                        '%Y-%m-%d %H:%M:%S'))
                     print('Classifications sucessfully appended to '
                           '\'classification.out\'.')
-                except SystemError:
+                except:
                     print('Writing classifications to file failed. Closing '
                           'program.')
                     return
