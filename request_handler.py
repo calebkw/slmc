@@ -1,9 +1,14 @@
 import sys
-sys.path.insert(0,'/')
 from flask import Flask, request, jsonify
-import get_prediction
+import io
 import numpy as np
-app= Flask(__name__)
+from PIL import Image as Im
+from get_prediction import get_prediction
+
+sys.path.insert(0,'/')
+app = Flask(__name__)
+
+calls = 0
 
 
 @app.route("/requests", methods=['GET'])
@@ -15,7 +20,7 @@ def request_total():
     """
 
     global calls
-    calls +=1
+    calls += 1
     output = {"requests": calls}
     return jsonify(output)
 
@@ -29,7 +34,6 @@ def request_classify():
 
     global calls
     calls += 1
-    label = []
     try:
         input = request.json['images']
     except:
@@ -41,7 +45,7 @@ def request_classify():
             # encode from unicode to utf-8, then decode to bytes
             im_data = base64.b64decode((image['data'].encode('utf-8')[2:-1]))
             # read as image data, save in ndarray
-            im_data = np.array(im.open(io.BytesIO(im_data)))
+            im_data = np.array(Im.open(io.BytesIO(im_data)))
             raw_prediction = get_prediction(im_data)
             prediction =[raw_prediction[0],  np.ndarray.tolist(raw_prediction[1])]
             current_im_dict = {'name': image['name'], 'prediction': prediction}
@@ -50,5 +54,7 @@ def request_classify():
     except:
         output = "Internal Error"
         return jsonify(output), 500
+
+    return jsonify(output)
 
 
