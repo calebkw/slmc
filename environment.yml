@@ -8,6 +8,5 @@ dependencies:
         - pytest
         - pytest-pep8
         - scipy
-        - base64
         - flask
         - os
