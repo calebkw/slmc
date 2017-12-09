@@ -38,9 +38,12 @@ def start_classifier():
                         prob = lesion['prediction'][1][1]
                         if prob > 0.50:
                             outcome = lesion['prediction'][0][1]
-                        else:
+                        elif lesion['prediction'][1][0] > 0.50:
                             prob = lesion['prediction'][1][0]
                             outcome = lesion['prediction'][0][0]
+                        else:
+                            prob = 1.00
+                            outcome = 'indeterminate'
                         write_to_file('classification.out', outcome, prob,
                                       lesion['name'], datetime.now().strftime(
                                        '%Y-%m-%d %H:%M:%S'))
