@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 import io
 from PIL import Image as im
 import base64
-import get_prediction
+from get_prediction import get_prediction
 import numpy as np
 app= Flask(__name__)
 
@@ -42,9 +42,15 @@ def request_classify():
     try:
         output = {'classified':[]}
         for image in input:
-            im_data = base64.b64decode(image['data'])
+           # return jsonify(((image['data'].encode('utf-8'))))
+            #import sys
+            #return jsonify(sys.version_info[0])
+            im_data = base64.b64decode((image['data'].encode('utf-8')[2:-1]))
+            #return jsonify(str((im_data)))
             im_data = np.array(im.open(io.BytesIO(im_data)))
-            prediction = get_prediction(im_data)
+            #return jsonify(str(np.shape(im_data)))
+            raw_prediction = get_prediction(im_data)
+            prediction =[raw_prediction[0],  np.ndarray.tolist(raw_prediction[1])]
             current_im_dict = {'name': image['name'], 'prediction': prediction}
             output['classified'].append(current_im_dict)
 
@@ -52,6 +58,7 @@ def request_classify():
         output = "Internal Error"
         return jsonify(output), 500
 
+    return jsonify(output)
 
 @app.route("/testing", methods=['POST'])
 def test_return():
