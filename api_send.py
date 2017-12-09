@@ -15,7 +15,7 @@ def classify(images_in):
         this_dict = {'name': img.name, 'data': img.image}
         jsn_dict['images'].append(this_dict)
 
-    endpoint = 'http://vcm-1840.vm.duke.edu:5000/api/classify'
+    endpoint = 'http://vcm-1840.vm.duke.edu:5000/image/classify'
     #print(type(data=json.dumps(jsn_dict)))
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
     r = requests.post(endpoint, data=json.dumps(jsn_dict), headers=headers)
@@ -29,7 +29,7 @@ def num_requests():
 
     import requests
     
-    endpoint = 'http://vcm-1840.vm.duke.edu:5000/api/num_requests'
+    endpoint = 'http://vcm-1840.vm.duke.edu:5000/requests'
     r = requests.get(endpoint)
 
     return r.json()

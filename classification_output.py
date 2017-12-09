@@ -7,7 +7,7 @@ def write_to_file(output_filename, classified_output, image_filename, date):
 
     """
 
-    file = open(output_filename, 'w')
+    file = open(output_filename, 'a')
     file.write('image: ')
     file.write(str(image_filename))
     file.write(', ')
