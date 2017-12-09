@@ -19,7 +19,7 @@ def request_total():
     output = {"requests": calls}
     return jsonify(output)
 
-@app.route("/image/classify", methods=['POST'])
+@app.route("/classify", methods=['POST'])
 def request_classify():
     """
     Takes in the image as a JSON and coverts to nd array
@@ -38,8 +38,13 @@ def request_classify():
     try:
         output = {'classified':[]}
         for image in input:
-            prediction = get_prediction(image['data'])
-            current_im_dict = {'name': image['name'], 'predicition': prediction}
+            # encode from unicode to utf-8, then decode to bytes
+            im_data = base64.b64decode((image['data'].encode('utf-8')[2:-1]))
+            # read as image data, save in ndarray
+            im_data = np.array(im.open(io.BytesIO(im_data)))
+            raw_prediction = get_prediction(im_data)
+            prediction =[raw_prediction[0],  np.ndarray.tolist(raw_prediction[1])]
+            current_im_dict = {'name': image['name'], 'prediction': prediction}
             output['classified'].append(current_im_dict)
 
     except:
