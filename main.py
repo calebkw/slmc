@@ -30,6 +30,9 @@ def start_classifier():
             try:
                 location = '/media/pi/' + os.listdir('/media/pi')[0]
                 print("Drive found at " + location + ".")
+                folder = input("Enter subdirectory on drive or enter to "
+                               "skip: ").strip()
+                location = location + folder
             except:
                 print("No removable drive found. Closing program.")
                 break
