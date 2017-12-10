@@ -12,7 +12,7 @@ def start_classifier():
     """
 
     while True:
-        if platform.system() is "Windows":
+        if platform.system() == 'Windows':
             location = input("Enter directory or USB drive letter from which "
                              "to extract images or \'quit\' to exit: ").strip()
             if location == 'quit':
@@ -22,12 +22,17 @@ def start_classifier():
                 break
             if len(location) == 1:
                 location = location + ':'
-        elif platform.system() is "Linux":
-            resp = input("Press enter to search for drive or \'quit\' to "
+        elif platform.system() == 'Linux':
+            resp = input("Press enter to search for USB drive or \'quit\' to "
                          "exit: ").strip()
             if resp == 'quit':
                 break
-            print(os.listdir('/media/pi'))
+            try:
+                location = '/media/pi/' + os.listdir('/media/pi')[0]
+                print("Drive found at " + location + ".")
+            except:
+                print("No removable drive found. Closing program.")
+                break
         else:
             location = input("Enter directory from which "
                              "to extract images or \'quit\' to exit: ").strip()
