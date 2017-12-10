@@ -1,4 +1,4 @@
-name: R_Pi
+name: slmc
 channels:
         - cbetters
 dependencies:
