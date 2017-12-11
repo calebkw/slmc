@@ -13,8 +13,8 @@ The Travis Badge is:
 
 Read the Docs Badge:
 =========
-<a href='http://slmc.readthedocs.io/en/latest/?badge=latest'>
-    <img src='https://readthedocs.org/projects/slmc/badge/?version=latest' alt='Documentation Status' />
+<a href='http://slmc.readthedocs.io/en/latest/?badge=master'>
+    <img src='https://readthedocs.org/projects/slmc/badge/?version=master' alt='Documentation Status' />
 </a>
 
 Starting the Program
