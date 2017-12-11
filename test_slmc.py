@@ -1,8 +1,6 @@
 def test_extract():
     """
-    :Author: Tim Hoer
-    :Date: November 20, 2017
-    :Notes: Tests that function loads all images from input directory and
+    Tests that function loads all images from input directory and
     stores them as instances of the lesion class.
     """
     import os
@@ -33,9 +31,7 @@ def test_extract():
 
 def test_write():
     """
-    :Author: Tim Hoer
-    :Date: November 20, 2017
-    :Notes: Tests that write function writes image
+    Tests that write function writes image
     classifications to text file in specified directory.
     """
     import shutil
