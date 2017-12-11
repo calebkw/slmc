@@ -45,7 +45,8 @@ def test_write():
     # create temporary directory
     temp_dir = tempfile.mkdtemp()
     # call function
-    write_to_file('test.txt', temp_dir, 'high risk', '.50',\
+
+    write_to_file('test.txt', temp_dir, 'high risk', '.50',
                   'patient10.jpg', '6/9/69')
     # check file
     f = open(path.join(temp_dir, 'test.txt'))
