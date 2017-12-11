@@ -1,3 +1,4 @@
+import os
 
 
 def write_to_file(output_filename, output_directory, classified_output,
@@ -14,7 +15,7 @@ def write_to_file(output_filename, output_directory, classified_output,
 
     """
 
-    file = open(output_directory + '/' + output_filename, 'a')
+    file = open(os.path.join(output_directory, output_filename), 'a')
     file.write('image: ')
     file.write(str(image_filename))
     file.write(', ')
