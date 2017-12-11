@@ -17,7 +17,6 @@ Read the Docs Badge:
     <img src='https://readthedocs.org/projects/slmc/badge/?version=latest' alt='Documentation Status' />
 </a>
 
-
 Starting the Program
 =========
 The program may be started by running main.py. Users running Windows may then specify either the directory or the drive letter from which to extract skin lesion images. On Linux, the program will detect a USB connected to any of the USB ports and then prompt the user if they would like to specify a subdirectory on the drive from which to extract images (this functionality is intended for use with a Raspberry Pi client). Mac users will simply be prompted to enter the directory from which to extract images. Typing quit for this prompt will end the program.
