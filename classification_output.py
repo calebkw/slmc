@@ -1,8 +1,9 @@
-def write_to_file(output_filename, classified_output, certainty,
-                  image_filename, date):
-    """
+def write_to_file(output_filename, output_directory, classified_output,
+                  certainty, image_filename, date):
+    """ 
     Writes the output to a seperate file
-    :param output_filename: str,name for output
+    :param output_filename: output filename string
+    :param output_directory: directory string to write output file
     :param classified_output: The classification of the output file
     :param certainty: Probability of output
     :param image_filename: Unique patient identifier
@@ -10,7 +11,7 @@ def write_to_file(output_filename, classified_output, certainty,
 
     """
 
-    file = open(output_filename, 'a')
+    file = open(output_directory + '/' + output_filename, 'a')
     file.write('image: ')
     file.write(str(image_filename))
     file.write(', ')

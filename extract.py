@@ -13,7 +13,7 @@ def extract(directory):
     lesions = []
     directory = directory + "/*"
     for fname in glob.glob(directory):
-        out = re.search('([^/]+\.(?:jpg|gif|png))', fname,
+        out = re.search('([^/]+\.(?:jpg|jpeg|png))', fname,
                         re.IGNORECASE)
         if out:
             with open(fname, "rb") as image_file:

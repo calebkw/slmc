@@ -20,7 +20,7 @@ def classify(images_in):
     r = requests.post(endpoint, data=json.dumps(jsn_dict), headers=headers)
 
     # TODO: parse return json and save classification to each object
-    return r.json()
+    return r.json(), r.status_code
 
 
 def num_requests():
@@ -30,4 +30,6 @@ def num_requests():
     endpoint = 'http://vcm-1840.vm.duke.edu:5000/requests'
     r = requests.get(endpoint)
 
-    return r.json()
+
+    return r.json(), r.status_code
+

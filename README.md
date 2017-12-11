@@ -17,29 +17,36 @@ Read the Docs Badge:
     <img src='https://readthedocs.org/projects/slmc/badge/?version=pep-8' alt='Documentation Status' />
 </a> 
 
-
 Starting the Program
 =========
-The program may be started by plugging in the USB with the stored images.
+The program may be started by running main.py. Users running Windows may then specify either the directory or the drive letter from which to extract skin lesion images. On Linux, the program will detect a USB connected to any of the USB ports and then prompt the user if they would like to specify a subdirectory on the drive from which to extract images (this functionality is intended for use with a Raspberry Pi client). Mac users will simply be prompted to enter the directory from which to extract images. Typing quit for this prompt will end the program.
 
 Requirements:
 =========
-Python 3.6
+Python 3.5
 
-A USB drive with the images to be classified.
-
-Raspberry Pi
+Windows/Mac: Any file directory containing skin lesion images.
+Linux: Removable media drive with the images to be classified.
+Optional: Raspberry Pi client
 
 Output
 =========
-The output is printed to (filename)_out.txt which has a list of the classified images and this is uploaded to the USB.
+The output is printed to classifications.out and is written to the drive or directory containing the extracted images.
 
-The output text file outputs a column with the images classified as either having a benign or malignant skin leision.
+Each line contains the image filename, the classification, and the date separated by commas.
 
 
 Unit Testing
 =========
 Unit testing is performed using py.test by running test_slmc.py.
+
+
+Additional Files
+=========
+Additional files are provided in the 'submission' folder. This folder contains an overview and performance evaluation of the service is provided in 'overview.pdf'. This folder also contains our RFC document and video demonstrations of running the program locally as well as on the Raspberry Pi client via SSH. 
+
+A pip3 virtual environment containing all dependencies is located in the 'pi_env' folder. An environment.yml file for creating a virtual environment with conda is located in the main directory.
+
 
 Team Members:
 ======
