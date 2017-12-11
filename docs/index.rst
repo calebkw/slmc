@@ -18,6 +18,7 @@ Welcome to Melanoma Classifier's documentation!
    main
    test_slmc
    request_handler
+   get_prediction
 
 
 Indices and tables
