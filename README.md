@@ -13,9 +13,9 @@ The Travis Badge is:
 
 Read the Docs Badge:
 =========
-<a href='http://slmc.readthedocs.io/en/pep-8/'>
-    <img src='https://readthedocs.org/projects/slmc/badge/?version=pep-8' alt='Documentation Status' />
-</a> 
+<a href='http://slmc.readthedocs.io/en/latest/?badge=latest'>
+    <img src='https://readthedocs.org/projects/slmc/badge/?version=latest' alt='Documentation Status' />
+</a>
 
 Starting the Program
 =========
