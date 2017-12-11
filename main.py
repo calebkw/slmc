@@ -73,7 +73,8 @@ def start_classifier():
                         else:
                             prob = 1.00
                             outcome = 'indeterminate'
-                        write_to_file('classification.out', outcome, prob,
+                        write_to_file('classification.out', location, outcome,
+                                      prob,
                                       lesion['name'],
                                       datetime.now().strftime(
                                        '%Y-%m-%d %H:%M:%S'))
