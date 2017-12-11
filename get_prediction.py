@@ -68,8 +68,7 @@ def get_prediction(image_matrix):
     This module is a machine learning algorithm to classify
     the images as being malignant or benign
 
-    :param: Image matrix - the base64 image converted to a 
-    3D matrix
+    :param: Image matrix - the base64 image converted to a 3D matrix
     :return: Classified Output
 
     """
