@@ -5,14 +5,14 @@ from Image import Image
 
 
 def extract(directory):
-    """ Extracts .jpg, .gif, png images from input directory, returns list of
+    """ Extracts .jpg images from input drive, returns list of
     image objects
     :param: dir: directory in which image files are located
     """
     lesions = []
     directory = directory + "/*"
     for fname in glob.glob(directory):
-        out = re.search('([^/]+\.(?:jpg|gif|png))', fname,
+        out = re.search('([^/]+\.(?:jpg|jpeg|png))', fname,
                         re.IGNORECASE)
         if out:
             with open(fname, "rb") as image_file:
