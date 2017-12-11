@@ -16,8 +16,8 @@ calls = 0
 def request_total():
     """
 
-    :return: the total number of requests made to the service
-    most recent reboot as JSON
+    :return: the total number of requests made to the service since most
+    recent reboot as JSON
     """
 
     global calls
@@ -28,9 +28,9 @@ def request_total():
 
 @app.route("/classify", methods=['POST'])
 def request_classify():
-    """
-    Takes in the image as a JSON and coverts to nd array
-    :return: the label of the image and the results
+    """Takes in the image as JSON and coverts to nd array
+
+    :return: JSON data of classification results
     """
 
     global calls

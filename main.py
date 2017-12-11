@@ -88,8 +88,10 @@ def start_classifier():
 
 def hasdrive(letter):
     """ For Windows systems, determines if specified drive is connected.
-        :param: letter: drive letter
-        """
+
+    :param: letter: drive letter
+    :return: boolean drive connection status
+    """
     return "Windows" in platform.system() and os.system(
         "vol %s: 2>nul>nul" % letter) == 0
 
