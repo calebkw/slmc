@@ -5,7 +5,8 @@ from Image import Image
 
 
 def extract(directory):
-    """ Extracts .jpg, .gif, png images from input directory, returns list of
+    """
+    Extracts .jpg, .gif, png images from input directory, returns list of
     image objects
     :param: dir: directory in which image files are located
     """
@@ -17,8 +18,8 @@ def extract(directory):
         if out:
             with open(fname, "rb") as image_file:
                 encoded_string = str(base64.b64encode(image_file.read()))
-            new_lesion = Image(im_data=encoded_string, filename=
-                               out.group(0))
+            new_lesion = Image(im_data=encoded_string,
+                               filename=out.group(0))
             lesions.append(new_lesion)
     return lesions
 
