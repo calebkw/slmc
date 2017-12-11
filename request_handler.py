@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image as Im
 from get_prediction import get_prediction
 
-sys.path.insert(0,'/')
+sys.path.insert(0, '/')
 app = Flask(__name__)
 
 calls = 0
@@ -25,12 +25,12 @@ def request_total():
     output = {"requests": calls}
     return jsonify(output)
 
+
 @app.route("/classify", methods=['POST'])
 def request_classify():
     """
     Takes in the image as a JSON and coverts to nd array
-
-    :return: the label of the image and the results 
+    :return: the label of the image and the results
     """
 
     global calls
@@ -41,7 +41,7 @@ def request_classify():
         output = "Input data is not formatted correctly."
         return jsonify(output), 400
     try:
-        output = {'classified':[]}
+        output = {'classified': []}
         for image in input:
             # encode from unicode to utf-8, then decode to bytes
             im_data = base64.b64decode((image['data'].encode('utf-8')[2:-1]))
@@ -51,7 +51,8 @@ def request_classify():
             while np.shape(im_data)[2] > 3:
                 im_data = im_data[:, :, :-1]
             raw_prediction = get_prediction(im_data)
-            prediction =[raw_prediction[0],  np.ndarray.tolist(raw_prediction[1])]
+            prediction = [raw_prediction[0],
+                          np.ndarray.tolist(raw_prediction[1])]
             current_im_dict = {'name': image['name'], 'prediction': prediction}
             output['classified'].append(current_im_dict)
 
@@ -60,5 +61,3 @@ def request_classify():
         return jsonify(output), 500
 
     return jsonify(output)
-
-
