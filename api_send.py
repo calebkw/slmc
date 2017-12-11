@@ -27,9 +27,7 @@ def num_requests():
     """Get total number of requests to server"""
 
     import requests
-    
     endpoint = 'http://vcm-1840.vm.duke.edu:5000/requests'
     r = requests.get(endpoint)
 
     return r.json()
-
