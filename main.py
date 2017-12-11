@@ -57,7 +57,7 @@ def start_classifier():
             except:
                 print('System server failure. Closing program.')
                 return
-            # write output to file
+        # write output to file
             if status_code != 200:
                 print('API request for image classification failed. '
                       'Status code ' + str(status_code) + ".")
@@ -86,6 +86,9 @@ def start_classifier():
 
 
 def hasdrive(letter):
+    """ For Windows systems, determines if specified drive is connected.
+        :param: letter: drive letter
+        """
     return "Windows" in platform.system() and os.system(
         "vol %s: 2>nul>nul" % letter) == 0
 
