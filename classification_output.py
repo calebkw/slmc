@@ -1,9 +1,7 @@
-
-
 def write_to_file(output_filename, classified_output, certainty,
-                  image_filename,
-                  date):
-    """ Writes the output to a seperate file
+                  image_filename, date):
+    """
+    Writes the output to a seperate file
     :param output_filename: str,name for output
     :param classified_output: The classification of the output file
     :param certainty: Probability of output
@@ -28,5 +26,3 @@ def write_to_file(output_filename, classified_output, certainty,
     file.close()
 
     file.close()
-
-
