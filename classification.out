@@ -7,3 +7,11 @@ image: DSC_0102.JPG, classification: non malignant, date: 2017-12-09 13:07:28
 image: DSC_0158.JPG, classification: non malignant, date: 2017-12-09 13:07:28
 image: DSC_0102.JPG, classification: non malignant, certainty: 0.8508810997009277, date: 2017-12-09 14:59:47
 image: DSC_0158.JPG, classification: non malignant, certainty: 0.9685705304145813, date: 2017-12-09 14:59:47
+image: ISIC_0000001.jpg, classification: non malignant, certainty: 0.7538281083106995, date: 2017-12-11 12:36:02
+image: ISIC_0000000.jpg, classification: non malignant, certainty: 0.6165613532066345, date: 2017-12-11 12:36:02
+image: ISIC_0000001.jpg, classification: non malignant, certainty: 0.7538281083106995, date: 2017-12-11 12:56:29
+image: ISIC_0000000.jpg, classification: non malignant, certainty: 0.6165613532066345, date: 2017-12-11 12:56:29
+image: ISIC_0000001.jpg, classification: non malignant, certainty: 0.7538281083106995, date: 2017-12-11 13:01:59
+image: ISIC_0000000.jpg, classification: non malignant, certainty: 0.6165613532066345, date: 2017-12-11 13:01:59
+image: ISIC_0000001.jpg, classification: non malignant, certainty: 0.7538281083106995, date: 2017-12-11 13:02:58
+image: ISIC_0000000.jpg, classification: non malignant, certainty: 0.6165613532066345, date: 2017-12-11 13:02:58
