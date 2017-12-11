@@ -15,7 +15,7 @@ Read the Docs Badge:
 =========
 <a href='http://slmc.readthedocs.io/en/latest/?badge=latest'>
     <img src='https://readthedocs.org/projects/slmc/badge/?version=latest' alt='Documentation Status' />
-</a>   
+</a>
 
 
 Starting the Program
