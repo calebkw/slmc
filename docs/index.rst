@@ -9,7 +9,12 @@ Welcome to Melanoma Classifier's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   Image
+   api_send
+   classification_output
+   extract
+   main
+   test_slmc
 
 
 Indices and tables
