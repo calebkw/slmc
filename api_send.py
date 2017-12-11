@@ -2,7 +2,7 @@ def classify(images_in):
     """
 
     :param images_in: list of Image objects
-    :return:
+    :return: tuple of server response (json data, status code)
     """
     import requests
     import json
