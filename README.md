@@ -23,7 +23,15 @@ The program may be started by running main.py. Users running Windows may then sp
 
 Requirements:
 =========
-Python 3.5
+Python 3.6
+
+Package dependencies included in environment.yml:
+        - numpy
+        - ipython
+        - pytest
+        - pytest-pep8
+        - scipy
+        - flask
 
 Windows/Mac: Any file directory containing skin lesion images.
 Linux: Removable media drive with the images to be classified.
