@@ -3,7 +3,7 @@ import os
 
 def write_to_file(output_filename, output_directory, classified_output,
                   certainty, image_filename, date):
-    """Writes the output to a seaerate file
+    """Writes the output to a separate file
 
     :param output_filename: output filename string
     :param output_directory: directory string to write output file
