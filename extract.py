@@ -5,9 +5,9 @@ from Image import Image
 
 
 def extract(directory):
-    """
-    Extracts .jpg, .gif, png images from input directory, returns list of
+    """Extracts .jpg, .gif, png images from input directory, returns list of
     image objects
+
     :param: dir: directory in which image files are located
     :return: list of Image instances containing image file names and encoded
              strings

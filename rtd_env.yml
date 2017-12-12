@@ -1,0 +1,12 @@
+name: slmc
+channels:
+        - conda-forge
+dependencies:
+        - python=3.5
+        - numpy
+        - ipython
+        - pytest
+        - pytest-pep8
+        - scipy
+        - flask
+        - tensorflow

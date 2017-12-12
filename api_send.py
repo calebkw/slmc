@@ -1,5 +1,5 @@
 def classify(images_in):
-    """
+    """ send classification request to api endpoint on VM
 
     :param images_in: list of Image objects
     :return: tuple of server response (json data, status code)

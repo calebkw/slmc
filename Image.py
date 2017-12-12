@@ -5,7 +5,7 @@ class Image:
     """
 
     def __init__(self, im_data, filename):
-        """
+        """Initialize image object
 
         :param im_data: mxn array of image pixel data
         :param filename: str, name of file
