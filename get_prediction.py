@@ -64,7 +64,8 @@ def load_labels(label_file):
 
 
 def get_prediction(image_matrix):
-    """ This module is a machine learning algorithm to classify
+    """ 
+    This module is a machine learning algorithm to classify
     the images as being malignant or benign
 
     :param: Image matrix - the base64 image converted to a 3D matrix
