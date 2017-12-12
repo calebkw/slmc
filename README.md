@@ -43,10 +43,7 @@ Unit testing is performed using py.test by running test_slmc.py.
 
 Additional Files
 =========
-Additional files are provided in the 'submission' folder. This folder contains an overview and performance evaluation of the service is provided in 'overview.pdf'. This folder also contains our RFC document and video demonstrations of running the program locally as well as on the Raspberry Pi client via SSH. 
-
-A pip3 virtual environment containing all dependencies is located in the 'pi_env' folder. An environment.yml file for creating a virtual environment with conda is located in the main directory.
-
+Additional files are provided in the 'submission' folder. This folder contains an overview and performance evaluation of the service is provided in 'BME_SDMD Final Report.pdf'. This folder also contains video demonstrations of running the program locally as well as on the Raspberry Pi client via SSH. 
 
 Team Members:
 ======
