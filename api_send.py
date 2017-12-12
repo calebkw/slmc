@@ -24,7 +24,10 @@ def classify(images_in):
 
 
 def num_requests():
-    """Get total number of requests to server"""
+    """Get total number of requests to server
+    
+    :return: tuple of server response (json data, status code)
+    """
 
     import requests
     endpoint = 'http://vcm-1840.vm.duke.edu:5000/requests'
